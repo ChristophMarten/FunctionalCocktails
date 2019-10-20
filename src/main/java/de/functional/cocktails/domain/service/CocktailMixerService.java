@@ -26,7 +26,10 @@ public class CocktailMixerService {
       }
     };
 
-    boolean erfolg = ingredients.get(0).prepare(11, hI);
+    HandleIngredients hi = cubaLibre.prepareCoke;
+
+
+    boolean erfolg = ingredients.get(0).prepare(11, hi);
 
     if (erfolg) {
       return cubaLibre;
