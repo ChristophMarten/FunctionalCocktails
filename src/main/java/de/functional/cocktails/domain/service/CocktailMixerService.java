@@ -2,51 +2,23 @@ package de.functional.cocktails.domain.service;
 
 import de.functional.cocktails.domain.entity.Caipirinha;
 import de.functional.cocktails.domain.entity.CubaLibre;
-import de.functional.cocktails.domain.entity.HandleIngredients;
-import de.functional.cocktails.domain.entity.Ingredient;
 import de.functional.cocktails.domain.entity.Mojito;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
-import java.util.List;
 
 public class CocktailMixerService {
 
-  public CubaLibre mixCubaLibre() throws NotEnoughItemsFromIngredient {
-
-    CubaLibre cubaLibre = new CubaLibre();
-
-    List<Ingredient> ingredients = cubaLibre.getIngredients();
-
-    final int amountFinal = 10;
-
-    HandleIngredients hI = (amount) -> {
-      if (amount <= amountFinal) {
-        return true;
-      } else {
-        return false;
-      }
-    };
-
-    HandleIngredients hi = cubaLibre.prepareCoke;
-
-
-    boolean erfolg = ingredients.get(0).prepare(11, hi);
-
-    if (erfolg) {
-      return cubaLibre;
-    } else {
-      throw new NotEnoughItemsFromIngredient("Not enough Items from " + ingredients.get(0).getName());
-    }
-
+  public CubaLibre mixCubaLibre(int amoutOfGlass, int amountOfCoke, int amountOfIce, int amountOfRum, int amountOfLime) throws NotEnoughItemsFromIngredient {
+    return CubaLibre.createInstance(amoutOfGlass, amountOfCoke, amountOfIce, amountOfRum, amountOfLime);
   }
 
-  public Caipirinha mixCaipirinha() {
+  public Caipirinha mixCaipirinha(int amountOfGlass, int amountOfCachaca, int amountOfIce, int amountOfBrownSugar, int amountOfLime) throws NotEnoughItemsFromIngredient {
 
-    return null;
+    return Caipirinha.createInstance( amountOfGlass,  amountOfCachaca,  amountOfIce,  amountOfBrownSugar,  amountOfLime);
   }
 
-  public Mojito mixMojito() {
+  public Mojito mixMojito(int amountOfGlass, int amountOfRum, int amountOfSoda, int amountOfLime, int amountOfIce, int amountOfBrownSugar, int amountOfMint) throws NotEnoughItemsFromIngredient {
 
-    return null;
+    return Mojito.createInstance(amountOfGlass, amountOfRum, amountOfSoda, amountOfLime, amountOfIce, amountOfBrownSugar, amountOfMint);
   }
 
 }

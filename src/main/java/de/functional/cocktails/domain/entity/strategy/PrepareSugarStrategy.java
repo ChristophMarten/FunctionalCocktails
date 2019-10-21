@@ -3,15 +3,15 @@ package de.functional.cocktails.domain.entity.strategy;
 import de.functional.cocktails.domain.entity.HandleIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
-public interface PrepareCokeStrategy {
+public interface PrepareSugarStrategy {
 
-  HandleIngredients prepareCoke = (amount, minmalAmountForRecipe, ingredientName) -> {
+  HandleIngredients prepareSugar = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
-      System.out.println(amount + ingredientName +" poured !");
+      System.out.println(amount + ingredientName + " added !");
       return true;
     } else {
-      throw new NotEnoughItemsFromIngredient("Not enough " +ingredientName);
+      throw new NotEnoughItemsFromIngredient("Not enough " + ingredientName);
     }
   };
 }
