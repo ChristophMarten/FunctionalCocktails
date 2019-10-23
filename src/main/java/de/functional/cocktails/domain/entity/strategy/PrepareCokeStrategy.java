@@ -1,11 +1,10 @@
 package de.functional.cocktails.domain.entity.strategy;
 
-import de.functional.cocktails.domain.entity.HandleIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
-public interface PrepareCokeStrategy {
+public class PrepareCokeStrategy {
 
-  HandleIngredients prepareCoke = (amount, minmalAmountForRecipe, ingredientName) -> {
+  public PrepareIngredients prepareCoke = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
       System.out.println(amount + ingredientName +" poured !");

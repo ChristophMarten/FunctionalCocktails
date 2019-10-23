@@ -34,7 +34,6 @@ public class Caipirinha {
 
     List<Ingredient> ingredients = caipirinha.getIngredients();
     ingredients.get(0).prepare(amountOfGlass, glassAmountForRecipe, PrepareGlassStrategy.prepareGlass, ingredients.get(0).getName());
-    ingredients.get(1).prepare(amountOfCachaca, cachacaAmountForRecipe, PrepareCachacaStrategy.prepareCachaca, ingredients.get(1).getName());
     ingredients.get(2).prepare(amountOfIce, iceAmountForRecipe, PrepareIceStrategy.prepareIce, ingredients.get(2).getName());
     ingredients.get(3).prepare(amountOfBrownSugar, brownSugarAmountForRecipe, PrepareSugarStrategy.prepareSugar, ingredients.get(3).getName());
     ingredients.get(4).prepare(amountOfLime, limeAmountForRecipe, PrepareLimeStrategy.prepareLime, ingredients.get(4).getName());

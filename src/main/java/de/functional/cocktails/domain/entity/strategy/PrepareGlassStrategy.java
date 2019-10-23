@@ -1,11 +1,10 @@
 package de.functional.cocktails.domain.entity.strategy;
 
-import de.functional.cocktails.domain.entity.HandleIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
-public interface PrepareGlassStrategy {
+public class PrepareGlassStrategy {
 
-  HandleIngredients prepareGlass = (amount, minmalAmountForRecipe, ingredientName) -> {
+  public PrepareIngredients prepareGlass = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
       System.out.println(amount + ingredientName + " washed !");
@@ -15,7 +14,7 @@ public interface PrepareGlassStrategy {
     }
   };
 
-  HandleIngredients prepareGlassWithUmbrella = (amount, minmalAmountForRecipe, ingredientName) -> {
+  public PrepareIngredients prepareGlassWithUmbrella = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
       System.out.println(amount + ingredientName + " washed !");

@@ -1,11 +1,10 @@
 package de.functional.cocktails.domain.entity.strategy;
 
-import de.functional.cocktails.domain.entity.HandleIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
-public interface PrepareSugarStrategy {
+public class PrepareSugarStrategy {
 
-  HandleIngredients prepareSugar = (amount, minmalAmountForRecipe, ingredientName) -> {
+  public PrepareIngredients prepareSugar = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
       System.out.println(amount + ingredientName + " added !");

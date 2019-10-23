@@ -1,16 +1,15 @@
 package de.functional.cocktails.domain.entity.strategy;
 
-import de.functional.cocktails.domain.entity.HandleIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
-public interface PrepareLimeStrategy {
+public class PrepareLimeStrategy {
 
-  HandleIngredients prepareLime = (amount, minmalAmountForRecipe, ingredientName) -> {
+  public PrepareIngredients prepareLime = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
-      System.out.println(amount + " Cut " +ingredientName);
-      System.out.println(amount + " Press " + ingredientName);
-      System.out.println(amount + ingredientName + " poured !");
+      System.out.println(amount + " Cuted " +ingredientName);
+      System.out.println(amount + " Pressed " + ingredientName);
+      System.out.println(amount + " poured " + ingredientName );
       return true;
     } else {
       throw new NotEnoughItemsFromIngredient("Not enough "+ingredientName);

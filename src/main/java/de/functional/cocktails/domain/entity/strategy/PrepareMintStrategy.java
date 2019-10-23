@@ -1,11 +1,10 @@
 package de.functional.cocktails.domain.entity.strategy;
 
-import de.functional.cocktails.domain.entity.HandleIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
-public interface PrepareMintStrategy {
+public class PrepareMintStrategy {
 
-  HandleIngredients prepareMint = (amount, minmalAmountForRecipe, ingredientName) -> {
+  public PrepareIngredients prepareMint = (amount, minmalAmountForRecipe, ingredientName) -> {
 
     if (amount <= minmalAmountForRecipe) {
       System.out.println(amount + ingredientName + " crushed !");
@@ -14,5 +13,5 @@ public interface PrepareMintStrategy {
     } else {
       throw new NotEnoughItemsFromIngredient("Not enough " + ingredientName);
     }
-  };
-}
+  };}
+

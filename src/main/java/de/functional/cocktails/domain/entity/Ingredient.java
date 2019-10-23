@@ -1,5 +1,6 @@
 package de.functional.cocktails.domain.entity;
 
+import de.functional.cocktails.domain.entity.strategy.PrepareIngredients;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 
 public class Ingredient {
@@ -10,7 +11,7 @@ public class Ingredient {
     this.name = name;
     }
 
-  public boolean prepare(int amount,int minmalAmountForRecipe, HandleIngredients hI, String ingredientName) throws NotEnoughItemsFromIngredient {
+  public boolean prepare(int amount,int minmalAmountForRecipe, PrepareIngredients hI, String ingredientName) throws NotEnoughItemsFromIngredient {
     return hI.prepare(amount, minmalAmountForRecipe,ingredientName);
   }
 
