@@ -16,11 +16,13 @@ public class CubaLibre {
 
   private final int limeAmountForRecipe = 1;
 
+  private boolean readyToDrink = false;
+
   public List<Ingredient> getIngredients() {
     return ingredients;
   }
 
-  public  int getGlassAmountForRecipe() {
+  public int getGlassAmountForRecipe() {
     return glassAmountForRecipe;
   }
 
@@ -40,5 +42,11 @@ public class CubaLibre {
     return limeAmountForRecipe;
   }
 
+  public boolean isReadyToDrink() {
+    return readyToDrink;
+  }
 
+  public void setReadyToDrink(boolean readyToDrink) {
+    this.readyToDrink = readyToDrink;
+  }
 }
