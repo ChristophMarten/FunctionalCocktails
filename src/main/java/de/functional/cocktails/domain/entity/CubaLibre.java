@@ -4,42 +4,23 @@ import java.util.List;
 
 public class CubaLibre {
 
+  public static final int INGREDIENT_AMOUNT_FOR_CUBALIBRE = 5;
   private final List<Ingredient> ingredients = List.of(new Ingredient("Glass"), new Ingredient("Coke"), new Ingredient("Ice"), new Ingredient("Rum"), new Ingredient("Lime"));
 
-  private final int glassAmountForRecipe = 1;
+  public static final int GLASS_AMOUNT_FOR_RECIPE = 1;
 
-  private final int cokeAmountForRecipe = 350;
+  public static final int COKE_AMOUNT_FOR_RECIPE = 350;
 
-  private final int iceAmountForRecipe = 3;
+  public static final int ICE_AMOUNT_FOR_RECIPE = 3;
 
-  private final int rumAmountForRecipe = 8;
+  public static final int RUM_AMOUNT_FOR_RECIPE = 8;
 
-  private final int limeAmountForRecipe = 1;
+  public static final int LIME_AMOUNT_FOR_RECIPE = 1;
 
   private boolean readyToDrink = false;
 
   public List<Ingredient> getIngredients() {
     return ingredients;
-  }
-
-  public int getGlassAmountForRecipe() {
-    return glassAmountForRecipe;
-  }
-
-  public int getCokeAmountForRecipe() {
-    return cokeAmountForRecipe;
-  }
-
-  public int getIceAmountForRecipe() {
-    return iceAmountForRecipe;
-  }
-
-  public int getRumAmountForRecipe() {
-    return rumAmountForRecipe;
-  }
-
-  public int getLimeAmountForRecipe() {
-    return limeAmountForRecipe;
   }
 
   public boolean isReadyToDrink() {

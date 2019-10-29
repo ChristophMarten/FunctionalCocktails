@@ -1,6 +1,7 @@
 package de.functional.cocktails.domain.service;
 
 import de.functional.cocktails.domain.entity.Caipirinha;
+import de.functional.cocktails.domain.exception.NotEnoughIngredientsForCocktail;
 import de.functional.cocktails.domain.exception.NotEnoughItemsFromIngredient;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,8 +13,8 @@ public class CaipirinhaMixServiceTest {
 
   @Rule
   public ExpectedException expectedEx = ExpectedException.none();
-  CaipirinhaMixService caipirinhaMixService;
-  Caipirinha caipirinha;
+  private CaipirinhaMixService caipirinhaMixService;
+  private Caipirinha caipirinha;
 
   @Before
   public void setUp() {
@@ -22,54 +23,54 @@ public class CaipirinhaMixServiceTest {
   }
 
   @Test
-  public void testMixCaipirinha() throws NotEnoughItemsFromIngredient {
-    Caipirinha caipirinha = caipirinhaMixService.mixCaipirinha(555, 555, 555, 555, 555);
+  public void testMixCaipirinha() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
+    caipirinha = caipirinhaMixService.mixCaipirinha(555, 555, 555, 555, 555);
     Assert.assertTrue(caipirinha.isReadyToDrink());
   }
 
   @Test
-  public void testMixCaipirinhaWithNotEnoughGlass() throws NotEnoughItemsFromIngredient {
+  public void testMixCaipirinhaWithNotEnoughGlass() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
 
     expectedEx.expect(NotEnoughItemsFromIngredient.class);
     expectedEx.expectMessage("Not enough Glass");
 
-    caipirinhaMixService.mixCaipirinha(caipirinha.getGlassAmountForRecipe() - 1, 500, 500, 500, 500);
+    caipirinhaMixService.mixCaipirinha(Caipirinha.GLASS_AMOUNT_FOR_RECIPE - 1, 500, 500, 500, 500);
   }
 
   @Test
-  public void testMixCaipirinhaWithNotEnoughCachaca() throws NotEnoughItemsFromIngredient {
+  public void testMixCaipirinhaWithNotEnoughCachaca() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
 
     expectedEx.expect(NotEnoughItemsFromIngredient.class);
     expectedEx.expectMessage("Not enough Cachaca");
 
-    caipirinhaMixService.mixCaipirinha(500, caipirinha.getCachacaAmountForRecipe() - 1, 500, 500, 500);
+    caipirinhaMixService.mixCaipirinha(500, Caipirinha.CACHACA_AMOUNT_FOR_RECIPE - 1, 500, 500, 500);
   }
 
   @Test
-  public void testMixCaipirinhaWithNotEnoughIce() throws NotEnoughItemsFromIngredient {
+  public void testMixCaipirinhaWithNotEnoughIce() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
 
     expectedEx.expect(NotEnoughItemsFromIngredient.class);
     expectedEx.expectMessage("Not enough Ice");
 
-    caipirinhaMixService.mixCaipirinha(500, 500, caipirinha.getIceAmountForRecipe() - 1, 500, 500);
+    caipirinhaMixService.mixCaipirinha(500, 500, Caipirinha.ICE_AMOUNT_FOR_RECIPE - 1, 500, 500);
   }
 
   @Test
-  public void testMixCaipirinhaWithNotEnoughRum() throws NotEnoughItemsFromIngredient {
+  public void testMixCaipirinhaWithNotEnoughRum() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
 
     expectedEx.expect(NotEnoughItemsFromIngredient.class);
     expectedEx.expectMessage("Not enough BrownSugar");
 
-    caipirinhaMixService.mixCaipirinha(500, 500, 500, caipirinha.getBrownSugarAmountForRecipe() - 1, 500);
+    caipirinhaMixService.mixCaipirinha(500, 500, 500, Caipirinha.BROWN_SUGAR_AMOUNT_FOR_RECIPE - 1, 500);
   }
 
   @Test
-  public void testMixCaipirinhaWithNotEnoughLime() throws NotEnoughItemsFromIngredient {
+  public void testMixCaipirinhaWithNotEnoughLime() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
 
     expectedEx.expect(NotEnoughItemsFromIngredient.class);
     expectedEx.expectMessage("Not enough Lime");
 
-    caipirinhaMixService.mixCaipirinha(500, 500, 500, 500, caipirinha.getLimeAmountForRecipe() - 1);
+    caipirinhaMixService.mixCaipirinha(500, 500, 500, 500, Caipirinha.LIME_AMOUNT_FOR_RECIPE - 1);
   }
 
 }

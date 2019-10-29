@@ -6,40 +6,22 @@ public class Caipirinha {
 
   private final List<Ingredient> ingredients = List.of(new Ingredient("Glass"), new Ingredient("Cachaca"), new Ingredient("Ice"), new Ingredient("BrownSugar"), new Ingredient("Lime"));
 
-  private final int glassAmountForRecipe = 1;
+  public static final int GLASS_AMOUNT_FOR_RECIPE = 1;
 
-  private final int cachacaAmountForRecipe = 6;
+  public static final int CACHACA_AMOUNT_FOR_RECIPE = 6;
 
-  private final int iceAmountForRecipe = 5;
+  public static final int ICE_AMOUNT_FOR_RECIPE = 5;
 
-  private final int brownSugarAmountForRecipe = 2;
+  public static final int BROWN_SUGAR_AMOUNT_FOR_RECIPE = 2;
 
-  private final int limeAmountForRecipe = 1;
+  public static final int LIME_AMOUNT_FOR_RECIPE = 1;
+
+  public static final int INGREDIENT_AMOUNT_FOR_CAIPIRINHA = 5;
 
   private boolean readyToDrink = false;
 
   public List<Ingredient> getIngredients() {
     return ingredients;
-  }
-
-  public int getGlassAmountForRecipe() {
-    return glassAmountForRecipe;
-  }
-
-  public int getCachacaAmountForRecipe() {
-    return cachacaAmountForRecipe;
-  }
-
-  public int getIceAmountForRecipe() {
-    return iceAmountForRecipe;
-  }
-
-  public int getBrownSugarAmountForRecipe() {
-    return brownSugarAmountForRecipe;
-  }
-
-  public int getLimeAmountForRecipe() {
-    return limeAmountForRecipe;
   }
 
   public boolean isReadyToDrink() {
@@ -49,4 +31,5 @@ public class Caipirinha {
   public void setReadyToDrink(boolean readyToDrink) {
     this.readyToDrink = readyToDrink;
   }
+
 }
