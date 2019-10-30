@@ -25,7 +25,7 @@ public class CaipirinhaMixServiceTest {
   @Test
   public void testMixCaipirinha() throws NotEnoughItemsFromIngredient, NotEnoughIngredientsForCocktail {
     caipirinha = caipirinhaMixService.mixCaipirinha(555, 555, 555, 555, 555);
-    Assert.assertTrue(!caipirinha.isReadyToDrink());
+    Assert.assertTrue(caipirinha.isReadyToDrink());
   }
 
   @Test
